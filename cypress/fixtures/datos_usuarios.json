@@ -1,0 +1,29 @@
+{
+    "login_incorrecto1": {
+        "email": "test.com",
+        "contra": "GN2021fran"
+    },
+    "login_incorrecto2": {
+        "email": "frantestingcy@yahoo.com",
+        "contra": "123456"
+    },
+    "login_correcto": {
+        "email": "frantestingcy@yahoo.com",
+        "contra": "GN2021fran"
+    },
+    "registro_incorrecto1": {
+        "nombre": "Juan",
+        "email": "test.com",
+        "contra": "123456"
+    },
+    "registro_incorrecto2": {
+        "nombre": "Juan",
+        "email": "frantestingcy@yahoo.com",
+        "contra": "12345"
+    },
+    "registro_correcto": {
+        "nombre": "Juan",
+        "email": "frantestingcy+placeholder@yahoo.com",
+        "contra": "123456"
+    }
+}
