@@ -79,11 +79,17 @@ Cypress.Commands.add('rellenaRegistro', (nombre, email, contra) => {
     cy.get('input[data-cy="signUpFullNameInput"]')
         .type(nombre)
 
+    cy.wait(500)    
+
     cy.get('input[data-cy="signUpEmailInput"]')
         .type(email)
+    
+    cy.wait(500)   
 
     cy.get('input[data-cy="signUpPasswordInput"]')
         .type(contra)
+
+    cy.wait(500)   
 
     cy.get('button[data-cy="signUpSubmitButton"]')
         .click()
