@@ -16,6 +16,8 @@ describe('Registro', () => {
                 cy.get('button[data-cy="signUpWithEmailButton"]')
                     .click()
 
+                cy.wait(500)
+
                 cy.get('p > span')
                     .should('have.exist')
 
@@ -29,6 +31,8 @@ describe('Registro', () => {
 
                 cy.rellenaRegistro(incorrecto1.nombre, incorrecto1.email, incorrecto1.contra)
 
+                cy.wait(500)
+
                 cy.get('input[data-cy="signUpEmailInput"]')
                     .next()
                     .should('have.exist')
@@ -38,6 +42,8 @@ describe('Registro', () => {
                 const incorrecto2 = datos.registro_incorrecto2
 
                 cy.rellenaRegistro(incorrecto2.nombre, incorrecto2.email, incorrecto2.contra)
+
+                cy.wait(500)
 
                 cy.get('p[data-cy="passwordStrengthMessage"]')
                     .should('have.text', 'Tu contraseña debe tener un mínimo de 6 caracteres')
