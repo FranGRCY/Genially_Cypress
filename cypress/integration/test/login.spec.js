@@ -1,11 +1,11 @@
 describe("Login", () => {
 
-  it("1 - Login - Realiza login con datos incorrectos y posteriormente el correcto", () => {
+  it("1 - Login - Login with incorrect credentials and then with correct credentials", () => {
 
-    //Visita la web de "Genially"
+    //Visit the Genially web
     cy.visit("https://genial.ly/es/")
 
-    //Accede al portal de login
+    //Access the login portal
     cy.get('a[data-cy="loginButton"] > button')
       .first()
       .click()
@@ -17,34 +17,34 @@ describe("Login", () => {
 
         const incorrecto1 = datos.login_incorrecto1
 
-        //Introduce el email y la contraseña en el formulario de login para comprobar incorrectos
+        //Enter the email and password in the login form to check incorrect credentials
         cy.rellenarLogin(incorrecto1.email, incorrecto1.contra)
 
-        //Comprueba que aparece el mensaje de error
+        //Check the error message appears
         cy.get('form').find('p')
           .should("have.text", "Email o contraseña incorrecto.")
 
-        //Limpia los campos de texto del formulario de login
+        //Clear the text fields of the form
         cy.limpiarLogin()
 
         const incorrecto2 = datos.login_incorrecto2
 
-        //Introduce el email y la contraseña en el formulario de login para comprobar incorrectos
+        //Enter the email and password in the login form to check incorrect credentials
         cy.rellenarLogin(incorrecto2.email, incorrecto2.contra)
 
-        //Comprueba que aparece el mensaje de error
+        //Check the error message appears
         cy.get('form').find('p')
           .should("have.text", "Email o contraseña incorrecto.")
 
-        //Limpia los campos de texto del formulario de login
+        //Clear the text fields of the form
         cy.limpiarLogin()
 
         const correcto = datos.login_correcto
 
-        //Introduce el email y la contraseña en el formulario de login para comprobar correctos
+        //Enter the email and password correct in the login form to check correct credentials
         cy.rellenarLogin(correcto.email, correcto.contra)
 
-        //Comprueba que se accede correctamente y muestra el perfil del usuario
+        //Access and check the user profile
         cy.get('div[data-cy="userProfileSection"]')
           .should('have.exist')
 
